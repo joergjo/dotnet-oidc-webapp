@@ -1,18 +1,14 @@
-﻿using System.IO;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
-namespace OpenIdConnect.WebApp.Pages
+namespace AadClaimsViewer.Pages
 {
     [AllowAnonymous]
     public class EchoModel : PageModel
     {
         private readonly ILogger _logger;
 
-        public string RequestDump { get; set; }
+        public string? RequestDump { get; set; }
 
         public EchoModel(ILogger<EchoModel> logger)
         {
@@ -22,7 +18,8 @@ namespace OpenIdConnect.WebApp.Pages
         public async Task OnGet()
         {
             using var writer = new StringWriter();
-            await HttpEchoBuilder.Render(Request, writer);
+            _logger.LogDebug("Dumping request");
+            await Request.WriteAsync(writer);
             RequestDump = writer.ToString();
         }
     }

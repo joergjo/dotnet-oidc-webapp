@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/91e05a59-0cd5-4e8a-8c86-b4b6eaa30e36/resourceGroups/web-eu-02/providers/Microsoft.Web/sites/joergjo-debug",
+  "appService.deploySubpath": "./src/OpenIdConnect.WebApp"
+}
