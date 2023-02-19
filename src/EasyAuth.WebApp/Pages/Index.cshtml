@@ -6,23 +6,24 @@
 
 <div class="row justify-content-center">
     <div class="col">
-        <h1>HTTP Header</h1>
+        <h1>@ViewData["Welcome"]</h1>
+        <h2>HTTP Header</h2>
         <div class="table-responsive">
             <table class="table table-sm table-striped">
                 <thead>
-                    <tr>
-                        <th>Header</th>
-                        <th>Value</th>
-                    </tr>
+                <tr>
+                    <th>Header</th>
+                    <th>Value</th>
+                </tr>
                 </thead>
                 <tbody>
-                    @foreach (var header in Request.Headers)
-                    {
-                        <tr>
-                            <td>@header.Key</td>
-                            <td>@header.Value</td>
-                        </tr>
-                    }
+                @foreach (var header in Request.Headers)
+                {
+                    <tr>
+                        <td>@header.Key</td>
+                        <td>@header.Value</td>
+                    </tr>
+                }
                 </tbody>
             </table>
         </div>
