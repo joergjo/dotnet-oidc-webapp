@@ -25,7 +25,7 @@ namespace EasyAuth.WebApp.Pages
             ViewData["Welcome"] = welcomeText;
             _logger.LogInformation("Number of visits: {Visits}", visits);
             visits += 1;
-            HttpContext.Session.SetInt32(VisitsKey, visits!.Value);
+            HttpContext.Session.SetInt32(VisitsKey, visits.Value);
         }
     }
 }
