@@ -5,7 +5,7 @@ az webapp up \
     -g $AZ_RESOURCE_GROUP \
     -l $AZ_LOCATION \
     -p $AZ_PLAN \
-    --runtime ${AZ_WEBAPP_RUNTIME:-"dotnet:7"} \
+    --runtime ${AZ_WEBAPP_RUNTIME:-"dotnet:8"} \
     --os ${AZ_WEBAPP_OS:-windows} \
     --sku ${AZ_WEBAPP_SKU:-B1}
 
